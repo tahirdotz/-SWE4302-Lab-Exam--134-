@@ -39,6 +39,16 @@ public class PriceCalculatorTest {
 
         assertEquals(expectedSubtotal, calculator.calculateSubtotal(), "Passed");
     }
+    @Test
+    public void testCalculateSubtotalWithOneTopping() {
+        Container container = new Container("Waffle Cone", 5.00);
+        PriceCalculator calculator = new PriceCalculator(container);
+        Topping topping1 = new Topping("Sprinkles", 0.30);
+        calculator.addTopping(topping1);
+        double expectedSubtotal = 5.00 + 0.30;
+        assertEquals(expectedSubtotal, calculator.calculateSubtotal(), "Passed");
+    }
+
 
 
 
