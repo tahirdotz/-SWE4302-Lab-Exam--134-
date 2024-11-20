@@ -17,6 +17,16 @@ public class PriceCalculatorTest {
 
         assertEquals(expectedSubtotal, calculator.calculateSubtotal(), "Subtotal should be correctly calculated.");
     }
+    @Test
+    public void testCalculateSubtotalWithEmptyOrder() {
+        Container container = new Container("Waffle Cone", 5.00);
+        PriceCalculator calculator = new PriceCalculator(container);
+
+
+        double expectedSubtotal = 5.00;
+
+        assertEquals(expectedSubtotal, calculator.calculateSubtotal(), "Passed");
+    }
 
 
 
