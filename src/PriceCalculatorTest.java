@@ -27,6 +27,19 @@ public class PriceCalculatorTest {
 
         assertEquals(expectedSubtotal, calculator.calculateSubtotal(), "Passed");
     }
+    @Test
+    public void testCalculateSubtotalWithOnlyToppings() {
+        Container container = new Container("Paper Cup", 0.00);
+        PriceCalculator calculator = new PriceCalculator(container);
+        Topping topping1 = new Topping("Marshmallow", 0.70);
+        Topping topping2 = new Topping("Chocolate Chips", 0.50);
+        calculator.addTopping(topping1);
+        calculator.addTopping(topping2);
+        double expectedSubtotal = 0.00 + 0.70 + 0.50;
+
+        assertEquals(expectedSubtotal, calculator.calculateSubtotal(), "Passed");
+    }
+
 
 
 
